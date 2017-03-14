@@ -1,0 +1,45 @@
+@charset "UTF-8";
+//	_color_pallet.scss
+
+.color-pallet{
+    display:none;
+    padding:2px;
+    width:81px;
+    border:1px solid #ddd;
+    position:absolute;
+    bottom:20px;
+    right:0;
+    background:#fff;
+    @include clr();
+    span{
+        float:left;
+        width:15px;
+        height:15px;
+        cursor:pointer;
+        &:first-child{
+            border:1px solid #e1e1e1;
+        }
+        &:hover{
+            border:1px solid #ddd;
+        }
+    }
+    &.on{
+        display:block;
+    }
+}
+
+.oc-white{background:$oc-white}
+.oc-black{background:$oc-black}
+.oc-gray-9{background:$oc-gray-9}
+.oc-red-9{background:$oc-red-9}
+.oc-pink-9{background:$oc-pink-9}
+.oc-grape-9{background:$oc-grape-9}
+.oc-violet-9{background:$oc-violet-9}
+.oc-indigo-9{background:$oc-indigo-9}
+.oc-blue-9{background:$oc-blue-9}
+.oc-cyan-9{background:$oc-cyan-9}
+.oc-teal-9{background:$oc-teal-9}
+.oc-green-9{background:$oc-green-9}
+.oc-lime-9{background:$oc-lime-9}
+.oc-yellow-9{background:$oc-yellow-9}
+.oc-orange-9{background:$oc-orange-9}

@@ -1,0 +1,36 @@
+// _mixim.scss
+
+@mixin transition($target,$second,$effect){
+	-webkit-transition:$target $second $effect;
+	-moz-transition:$target $second $effect;
+	-ms-transition:$target $second $effect;
+	transition:$target $second $effect;
+}
+@mixin clr {
+  &:after {
+  	content:".";
+	display:block;
+	height:0px;
+	clear:both;
+	visibility:hidden;
+    font-size:0;
+  }
+}
+@mixin blind {
+	visibility:hidden;
+	overflow:hidden;
+	position:absolute;
+	width:0;height:0;
+	font-size:0;
+	line-height:0;
+	text-indent:-9999em;
+}
+@mixin font-size($val){
+	font-size:$val+px;
+	font-size:($val/$rembase)+rem;
+}
+
+@mixin global-w($w:1000px){
+	max-width:$w;
+	margin:0 auto;
+}

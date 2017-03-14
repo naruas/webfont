@@ -1,0 +1,44 @@
+@charset "UTF-8";
+//	_button.scss
+
+.btn {
+	display:inline-block;
+	outline: none;
+	border: none;
+	background:none;
+	cursor: pointer;
+	font-family:$base-font-family;
+	text-align: center;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+    border-radius:$border-radius;
+
+	span{
+		display:block;
+		padding:14px 30px 13px;
+		line-height:1;
+		font-weight:400;
+	}
+
+	@include font-size(16);
+}
+
+.btn-small{
+    span{
+        padding:3px 8px;
+    }
+    @include font-size(12);
+}
+
+.btn-base
+{
+	border:1px solid #32c5d2;
+	background:#32c5d2;
+	span{
+		color:#fff;
+	}
+	&:hover{
+		border-color:#17aab7;
+		background:#17aab7;
+	}
+}

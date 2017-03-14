@@ -1,0 +1,77 @@
+@charset "UTF-8";
+//	_layer.scss
+
+// common
+.layer{
+    display:none;
+    position:fixed;
+    z-index:100;
+    border-radius:$border-radius;
+    &.on{
+        display:block;
+    }
+    background:#fff;
+
+}
+.layer-inner{
+    padding:20px;
+}
+.layer-block{
+    display:none;
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:90;
+    top:0;
+    left:0;
+    background:#000;
+    background:rgba(0, 0, 0, 0.5);
+    cursor:pointer;
+    &.on{
+        display:block;
+    }
+}
+
+// custom layer
+.layer-preview
+{
+    width:500px;
+    height:300px;
+    left:50%;
+    top:50%;
+    margin-left:-250px;
+    margin-top:-150px;
+
+    h3{
+        margin-bottom:10px
+    }
+
+    .font-utility
+    {
+        @include clr();
+        b{
+            display:block;
+            padding:10px 0;
+        }
+
+    }
+    .font-preview{
+        padding:20px;
+        //margin-bottom:10px;
+        border:1px solid #eee;
+        word-break: break-all;
+        height:180px;
+        overflow-y: auto;
+        @include font-size(15);
+
+    }
+    .font-size{
+        float:left;
+        width:100px;
+        margin:0 0 0 7px;
+    }
+    .font-color{
+        float:right;
+        position:relative;
+    }
+}

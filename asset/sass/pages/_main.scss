@@ -1,0 +1,36 @@
+@charset "UTF-8";
+//	_main.scss
+
+.font-header{
+    margin-bottom:10px;
+    padding-bottom:10px;
+}
+
+.font-list{
+    @include clr();
+}
+.font-item{
+    float:left;
+    margin-right:(20px/$min-width)*100%;
+    margin-bottom:20px;
+    padding:10px;
+    width:(((($min-width)-(40px))/3))/$min-width*100%;
+    background:#e1e1e1;
+    word-break: break-all;
+    border-radius:$border-radius;
+
+    &.last-item{
+        margin-right:0;
+    }
+}
+.font-name{
+    padding:10px 0 5px;
+}
+.font-text{
+    @include font-size(15);
+    line-height:18px;
+    color:#000;
+}
+.font-btn{
+    text-align:right;
+}

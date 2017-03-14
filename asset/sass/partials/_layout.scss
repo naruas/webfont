@@ -1,0 +1,18 @@
+@charset "UTF-8";
+//	_layout.scss
+
+#wrapper{
+    @include global-w();
+    width:1000px;
+    padding:40px 20px 20px;
+}
+
+#header{
+    @include blind();
+}
+#content{
+
+}
+#footer{
+
+}

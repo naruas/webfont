@@ -1,0 +1,30 @@
+
+// style.scss
+
+// fonts
+//@import "fonts/fonts";
+
+// utils
+@import "utils/open-color";
+@import "utils/variables";
+@import "utils/mixins";
+
+// base
+@import "base/reset";
+@import "base/base";
+
+// components
+@import "components/button";
+
+// partials
+@import "partials/layout";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/layer";
+@import "partials/color-pallet";
+
+// vendors
+@import "vendors/jquery-ui";
+
+// pages
+@import "pages/main";
