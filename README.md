@@ -10,8 +10,8 @@
 ## Using library for developing UI
 + jquery-1.12.4.js
 + jquery-ui.js
-+ open-color.scss
 + jquery-ui.css
++ open-color.scss
 
 
 ## Browser for testing
