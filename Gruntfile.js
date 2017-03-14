@@ -53,6 +53,14 @@ module.exports = function(grunt) {
 			 }
 	    },
 
+		uglify: {
+		   my_target: {
+			 files: {
+			   'asset/js/script.min.js': ['asset/js/script.js']
+			 }
+		   }
+	   },
+
 	    // Cache breaker
 	    cachebreaker: {
 	    	md5: {
@@ -62,12 +70,13 @@ module.exports = function(grunt) {
                             {
                              	'style.min.css': 'asset/css/style.min.css',
                              	'style.css': 'asset/css/style.css',
+                            	'script.min.js': 'asset/js/script.min.js',
                             	'script.js': 'asset/js/script.js',
                             }
                         ]
                 },
 	            files: {
-	                	src:['**/*.html']
+	                	src:['/public/*.html']
 	            }
 	        }
 	    },
@@ -89,7 +98,7 @@ module.exports = function(grunt) {
 				// },
 			},
 			js:{
-				files:['asset/js/script.js'],
+				files:['asset/js/script.js','asset/js/script.min.js'],
 				// options:{
 				// 	livereload:true,
 				// },
@@ -101,7 +110,8 @@ module.exports = function(grunt) {
 	// Default task(s)
 	grunt.registerTask('default', [
 	                                'sass',
-	                               // 'cssmin',
+	                                'cssmin',
+									'uglify',
 	                               // 'cachebreaker',
 	                               //'watch'
     ]);

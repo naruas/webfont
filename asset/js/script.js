@@ -4,7 +4,7 @@
  *
  * */
 
-
+/* Setting font */
  var FontController =
  {
      selectedNum 	: null,
@@ -33,7 +33,7 @@
          'oc-yellow-9',
          'oc-orange-9'	],
 
-     setFont			: function(idx)
+     setFont		: function(idx)
      {
          $('.layer-preview h3').text(FontController.fontFamily[idx]);
          $('.font-preview').css({'font-family':FontController.fontFamily[idx]});
@@ -54,46 +54,77 @@
          $('.font-preview').css({'color':color});
      },
 
- }
+ };
 
- var LayerController =
+
+/* Setting layer */
+var LayerController =
  {
      openChk 	: false,
      setLayer 	: function(chk)
      {
          if(chk){
-             $('.layer, .layer-block').addClass('on')
+             $('.layer, .layer-block').addClass('on');
          }else{
-             $('.layer, .layer-block').removeClass('on')
+             $('.layer, .layer-block').removeClass('on');
              FontController.setFontColor('#000');
-         }
+         };
      },
      setColorPallet : function(){
          $('.color-pallet').toggleClass('on');
-     },
- }
+     }
+ };
 
- $( function() {
+/* animate */
+var Animate =
+{
+    myTime : null,
+    count : 0,
+    spd : 50,
+    visibleItem : function()
+    {
+        $('.font-item').eq(Animate.count).addClass('on');
 
-     // when selecting font item
+        if(Animate.count >= $('.font-item').length)
+        {
+            Animate.clearTime();
+        }
+        Animate.count++;
+    },
+    setTime : function()
+    {
+        Animate.myTime = setInterval(Animate.visibleItem, Animate.spd);
+    },
+    clearTime : function()
+    {
+        clearInterval(Animate.myTime);
+    }
+ };
+
+
+Animate.setTime();
+
+$(function() {
+
+     /*when selecting font item*/
      $('.font-item').each(function(idx)
      {
-         // to arrange font list
-         $(this).find('.font-text').css({'font-family':FontController.fontFamily[idx]});
-         $(this).find('.font-name').text(FontController.fontFamily[idx]);
+         /*to arrange font list*/
          if(idx%3 == 2)
          {
              $(this).addClass('last-item');
-         }
+         };
+         $(this).find('.font-text').css({'font-family':FontController.fontFamily[idx]});
+         $(this).find('.font-name').text(FontController.fontFamily[idx]);
 
-         // to click font item
+         /*to click font item*/
          $(this).find('.btn').on('click', function(){
              LayerController.setLayer(true);
              FontController.selectedNum = $(this).parent().parent().index();
              FontController.setFont(FontController.selectedNum);
          })
 
-         // to float Layer
+         /*to float Layer*/
          $('.layer-block').on('click', function(){
              LayerController.setLayer(false);
              LayerController.setColorPallet();
@@ -101,25 +132,29 @@
 
      });
 
-     // to set font size with jquery ui
+     /*to set font size with jquery ui*/
      $( "#slider" ).slider({
          slide: function( event, ui ) {
              FontController.setFontSize(ui.value+FontController.fontSizeBase);
         }
      });
 
-     // to create color picker
+     /*to create color picker*/
      FontController.createColorPick();
-     // to open color picker
+     /*to open color picker*/
      $('.btn-colorpick').on('click', function(){
          LayerController.setColorPallet();
      });
 
+     /*to pick selected color*/
      $('.color-pallet span').each(function(){
          $(this).on('click', function(){
              FontController.setFontColor($(this).css('background-color'));
              LayerController.setColorPallet();
-         })
+         });
      });
 
- } );
+     /* animate */
+
+
+ });

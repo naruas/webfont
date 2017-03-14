@@ -392,7 +392,7 @@ a.ui-button:active,
 }
 
 .font-header {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding-bottom: 10px;
 }
 
@@ -414,9 +414,19 @@ a.ui-button:active,
   background: #e1e1e1;
   word-break: break-all;
   border-radius: 3px;
+  opacity: 0;
+  margin-top: 20px;
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -ms-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .font-item.last-item {
   margin-right: 0;
+}
+.font-item.on {
+  opacity: 1;
+  margin-top: 0;
 }
 
 .font-name {
