@@ -76,7 +76,7 @@ module.exports = function(grunt) {
                         ]
                 },
 	            files: {
-	                	src:['/public/*.html']
+	                	src:['public/*.html']
 	            }
 	        }
 	    },
