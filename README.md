@@ -1,6 +1,7 @@
 # webfont
 
-## Library for developing UI
+
+## Using library for developing UI
 + jquery-1.12.4.js
 + jquery-ui.js
 + open-color.scss
