@@ -46,7 +46,7 @@
      {
          for(var i=0;i<FontController.fontColor.length;i++){
              $('.color-pallet').append('<span class='+FontController.fontColor[i]+'></span>');
-         }
+         };
 
      },
      setFontColor 	: function(color)
@@ -101,9 +101,6 @@ var Animate =
     }
  };
 
-
-Animate.setTime();
-
 $(function() {
 
      /*when selecting font item*/
@@ -126,8 +123,8 @@ $(function() {
 
          /*to float Layer*/
          $('.layer-block').on('click', function(){
-             LayerController.setLayer(false);
              LayerController.setColorPallet();
+             LayerController.setLayer(false);
          });
 
      });
@@ -155,6 +152,6 @@ $(function() {
      });
 
      /* animate */
-
+     Animate.setTime();
 
  });
