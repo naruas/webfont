@@ -17,5 +17,6 @@
 ## Browser for testing
 + Chrome
 + Firefox
++ Safari
 + Edge
 + IE(11,10,9,8)
