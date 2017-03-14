@@ -3,8 +3,8 @@
 ## Environment
 + Atom
 + grunt
-+ >> grunt-contrib-scss
-+ scss
++ scss + html + jquery
++ google web fonts
 
 
 ## Using library for developing UI
